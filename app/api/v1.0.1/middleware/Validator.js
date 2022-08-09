@@ -31,10 +31,10 @@ module.exports = function(validator) {
                 let returnData = {}
                 returnData.status = false
                 returnData.message = err.details[0].message
-                returnData.data = { err: 
+                returnData.data = { errors: 
                     err.details.map(i => i.message)
                 }
-                return res.status(422).json(returnData) 
+                return res.status(400).json(returnData) 
             } 
             next(createHttpError(500))
         }
