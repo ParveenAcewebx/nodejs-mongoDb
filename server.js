@@ -1,9 +1,13 @@
 const express = require("express")
+require("dotenv").config();
 const app = express();
 
 //require("./startup/swagger")(app);
 require("./startup/db")();
 require("./startup/routes")(app);
+
+
+
 
 // set port, listen for requests
 const PORT = process.env.PORT || 8444;
