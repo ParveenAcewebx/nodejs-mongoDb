@@ -1,8 +1,7 @@
 
 # Sale Report Manager
 
-Create API for Sales Teams report. Report will be monthly sale, Profilt, Team Gole etc 
-
+Create API for Sales Teams report. Report will be monthly sale, Profilt, Team Gole etc.
 
 ## Run Locally
 
