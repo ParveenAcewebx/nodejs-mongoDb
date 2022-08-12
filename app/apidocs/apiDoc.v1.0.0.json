@@ -1,0 +1,80 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "version" : "1.0.0",
+        "title": "Sale Report Manager APIs Document",
+        "description": "your description here",
+        "termsOfService": "",
+        "contact": {
+            "name": "Sales Report Manager",
+            "email": "parveen@acewebx.com",
+            "url": "https://acewebx.com/"
+        }
+    },
+    "servers": [
+        {
+            "url": "https://sales-report-manager.herokuapp.com/api/v1.0.0",
+            "description": "Production server"            
+        },
+        {
+            "url": "http://localhost:8444/api/v1.0.0",
+            "description": "Development server"            
+        }
+    ],
+    "tags": [
+        {
+            "name": "Auth",
+            "description": "Auth Opration"
+        }
+    ],  
+    "paths": {
+      "/auth/login": {
+        "post": {
+          "tags": ["Auth"],
+          "description": "Admin Signin Api",
+          "operationId": "adminSignin",          
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "email",
+                    "password"
+                  ],
+                  "properties": {
+                    "email": {
+                      "type": "string",
+                      "description": "User Email"
+                    },
+                    "password": {
+                      "type": "string",
+                      "description": "User Password"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "200": {
+              "description": "Users were obtained"              
+            },
+            "400": {
+              "description": "Missing parameters"              
+            }
+          }
+        }
+      }
+    },
+    "components": {
+        "securitySchemes": {
+          "jwt": {
+            "name": "x-auth-token",
+            "type": "apiKey",
+            "scheme": "bearer",
+            "in": "header",
+            "bearerFormat": "JWT"
+          }
+        }
+    }
+}
