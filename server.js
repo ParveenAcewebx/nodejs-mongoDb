@@ -1,6 +1,12 @@
+logger = require("./startup/logging");
+
+
 const express = require("express")
 require("dotenv").config();
 const app = express();
+
+// Log All req, response parms
+require("./startup/httpLogger")(app);
 
 require("./startup/swagger")(app);
 require("./startup/db")();
@@ -16,3 +22,8 @@ app.listen(PORT, () => {
 });
 
 // https://github.com/bezkoder
+
+// ## Readme file genrator //
+
+// https://readme.so/editor 
+// https://rahuldkjain.github.io/gh-profile-readme-generator/

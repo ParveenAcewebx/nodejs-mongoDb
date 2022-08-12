@@ -31,7 +31,6 @@ const successHandler = (req, res, data = '', successMsg = '') => {
 }
 const errorHandler = (req, res, exception) => {
   var returnData = {}
-  console.log('xxxxxxxxxxxxxxx', exception)
   returnData.status = false
   returnData.message = exception.message
   returnData.data = { errors: [] }
