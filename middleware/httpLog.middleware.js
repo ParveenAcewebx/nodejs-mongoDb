@@ -1,7 +1,6 @@
-const logger = require("../startup/logging");
+const logger = require("../startup/errorLogger");
   module.exports = function(req, res, next){
     try {
-        console.log('xxx')
         const reqUrl = req.url
         res.on("finish", () => {
             let postLogData = {   
@@ -21,7 +20,6 @@ const logger = require("../startup/logging");
     next()
     
 } catch (err) {
-          console.log('xxxd')
         logger.error('http Logger', err)
         next()
         return false

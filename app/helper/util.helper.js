@@ -30,6 +30,7 @@ const successHandler = (req, res, data = '', successMsg = '') => {
   return res.status(statusCode).send(returnData)
 }
 const errorHandler = (req, res, exception) => {
+  errorLogger.error('errorHandler', exception)
   var returnData = {}
   returnData.status = false
   returnData.message = exception.message

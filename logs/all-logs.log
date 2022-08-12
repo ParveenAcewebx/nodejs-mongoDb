@@ -1,6 +1,0 @@
-{"message":"Listening on ","level":"info"}
-{"message":"This is error Log Text from Test Controller","level":"error"}
-{"message":"::1 - - [Tue, 22 Sep 2020 06:21:03 GMT] \"POST /api/v1.0.0/test HTTP/1.1\" 200 26 \"-\" \"PostmanRuntime/7.26.5\"\n","level":"info"}
-{"message":"Listening on ","level":"info"}
-{"message":"This is error Log Text from Test Controller","level":"error"}
-{"message":"::1 - - [Tue, 22 Sep 2020 06:21:48 GMT] \"POST /api/v1.0.0/test HTTP/1.1\" 200 26 \"-\" \"PostmanRuntime/7.26.5\"\n","level":"info"}
