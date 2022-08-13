@@ -25,7 +25,11 @@
         {
             "name": "Auth",
             "description": "Auth Opration"
-        }
+        },
+        {
+          "name": "User",
+          "description": "User Opration"
+      }
     ],  
     "paths": {
       "/auth/login": {
@@ -59,6 +63,62 @@
             "200": {
               "description": "Users were obtained"              
             },
+            "400": {
+              "description": "Missing parameters"              
+            }
+          }
+        }
+      },
+      "/user/me": {
+        "get": {
+          "tags": ["Auth"],
+          "description": "Get user object",
+          "operationId": "userMe",          
+          "responses": {
+            "400": {
+              "description": "Missing parameters"              
+            }
+          },
+          "security": [
+            {
+              "jwt": []
+            }
+          ]
+        }
+      },
+      "/user": {
+        "post": {
+          "tags": ["User"],
+          "description": "Create new User",
+          "operationId": "createNewUser",          
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "required": [
+                    "name",
+                    "email",
+                    "password"
+                  ],
+                  "properties": {
+                    "name": {
+                      "type": "string",
+                      "description": "User Name"
+                    },
+                    "email": {
+                      "type": "string",
+                      "description": "User Email"
+                    },
+                    "password": {
+                      "type": "string",
+                      "description": "User Password"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
             "400": {
               "description": "Missing parameters"              
             }

@@ -1,11 +1,10 @@
 const _ = require("lodash");
-const { User } = require("../models/user.model");
+const userService = require("../services/user.service");
 const bcrypt = require('bcrypt');
 const { successHandler, errorHandler } = require("../../../helper/util.helper");
 exports.login = async(req, res) => {
     try{
-
-        let user = await User.findOne({ email: req.body.email });
+        let user = await userService.getByProperty({ email: req.body.email });
         if (!user)  throw new Error("Invalid email or password."); 
 
         const validPassword = await bcrypt.compare(req.body.password, user.password);
