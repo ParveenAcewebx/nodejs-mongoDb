@@ -1,34 +1,7 @@
 
 # Sale Report Manager
 
-Create API for Sales Teams report. Report will be monthly sale, Profilt, Team Gole etc 
-
-
-## Run Locally
-
-Clone the project
-
-```bash
-  git clone https://github.com/ParveenAcewebx/nodejs-mongoDb
-```
-
-Go to the project directory
-
-```bash
-  cd nodejs-mongoDb
-```
-
-Install dependencies
-
-```bash
-  npm install
-```
-
-Start the server
-
-```bash
-  npm run start
-```
+Create API for Sales Teams report. Report will be monthly sale, Profilt, Team Goal etc 
 
 
 ## Environment Variables
