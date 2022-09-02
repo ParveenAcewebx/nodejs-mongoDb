@@ -17,5 +17,21 @@ exports.login = async(req, res) => {
     }catch(ex){
         return errorHandler(res,res, ex)        
     }
-  };
+  }
+
+
+  exports.loginWithAccessToken = async(req, res) => {
+    try{
+        const user = await userService.findById(req.user._id);
+        if (!user)  throw new Error("Invalid access token detected"); 
+
+        const token = user.generateAuthToken();
+        let returnData ={
+            ..._.pick(user, ["name", "_id", "email"]), token
+        }
+        return successHandler(res,res, returnData, 'Login successfully')
+    }catch(ex){
+        return res.status(401).send(ex.message)
+    }
+};
 

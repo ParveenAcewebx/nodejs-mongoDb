@@ -69,6 +69,24 @@
           }
         }
       },
+      "/auth/loginWithAccessToken": {
+        "post": {
+          "tags": ["Auth"],
+          "summery": "Login with Access Token",
+          "description": "Get user object",
+          "operationId": "loginWithAccessToken",          
+          "responses": {
+            "400": {
+              "description": "Missing parameters"              
+            }
+          },
+          "security": [
+            {
+              "jwt": []
+            }
+          ]
+        }
+      },
       "/user/me": {
         "get": {
           "tags": ["Auth"],
